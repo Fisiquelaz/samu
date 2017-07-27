@@ -6,21 +6,27 @@ import { resumoComponent } from './resumo.component';
 import { dados_ufComponent } from './dados_uf.component';
 import { todos_dadosComponent } from './todos_dados.component';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 import {UFService} from './services/uf.service';
 import {SamuService} from './services/samu.service';
 import {ModeloNovoService} from './services/modelonovo.service'
 
 import { RouterModule }   from '@angular/router';
+import { HttpModule }    from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     resumoComponent,
     dados_ufComponent,
-    todos_dadosComponent
+    todos_dadosComponent,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     RouterModule.forRoot([
   {
     path: 'resumo',

@@ -241,5 +241,4 @@ export const VALORES = [
     {valor:269,uf_id:41,ano:2014},
     {valor:44,uf_id:33,ano:2014},
     {valor:25,uf_id:24,ano:2014},
-    {valor:293,uf_id:42,ano:2014}
 ]
