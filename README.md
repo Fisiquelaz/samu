@@ -2,7 +2,7 @@
 
 ## Link para a aplicação
 
-https://samu-danilo.herokuapp.com/resumo
+https://samu-danilo.herokuapp.com/
 
 ## Objetivo
 
