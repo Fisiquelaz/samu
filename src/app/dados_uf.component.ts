@@ -14,19 +14,17 @@ import {UFs} from './services/mock-ufs'
   styleUrls: ['./app.component.css']
 })
 export class dados_ufComponent implements OnInit {
-    ufs : UF[];
-    dados_da_samu : Dados[];
     id = 15
     uf: UF;
-    samu: Dados[];
+    samu: Dados[] = [];
 
     constructor(private ufService: UFService, private samuService: SamuService)
     { }
 
     ngOnInit(): void {
-        this.ufs = this.ufService.getAll();
-        //this.dados_da_samu = this.samuService.getAllMunicipiosAtendidosPorEstado();
-        this.uf = this.ufService.getUF(this.id);
-        this.samu = this.samuService.getMunicipiosPorAno(this.uf);
+        this.ufService.getUF(this.id).then((uf) => {
+          this.uf = uf;
+          this.samuService.getMunicipiosPorAno(this.uf).then(samu => this.samu = samu);
+        });
     }
 }

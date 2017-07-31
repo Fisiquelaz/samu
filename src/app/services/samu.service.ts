@@ -8,24 +8,20 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SamuService {
-  private samuUrl = 'in-memory-data.service';  // URL to web api
+  private samuUrl = 'mock-samu_municipios_atendidos_por_estado';  // URL to web api
 
   constructor(private http: Http) { }
 
   getAllMunicipiosAtendidosPorEstado(): Promise<Dados[]> {
-    return this.http.get(this.samuUrl)
-             .toPromise().then(response => response.json().data as Dados[])
-             .catch(this.handleError);
+    return Promise.resolve(VALORES)
   }
   private handleError(error: any): Promise<any> {
   console.error('An error occurred', error); // for demo purposes only
   return Promise.reject(error.message || error);
 }
-  geMediaMunicipios(id: number): number{
-    let numero: number;
-    numero = 0;
-    let anos: number;
-    anos = 0;
+  geMediaMunicipios(id: number): Promise<number>{
+    let numero: number = 0;
+    let anos: number = 0;
     for(let entrada of VALORES)
     {
       if(entrada.uf_id == id)
@@ -34,9 +30,9 @@ export class SamuService {
         anos++;
       }
     }
-    return Math.round(numero/anos);
+    return Promise.resolve(Math.round(numero/anos));
   }
-  getMunicipiosPorAno(uf: UF): Dados[]{
+  getMunicipiosPorAno(uf: UF): Promise<Dados[]>{
     let valores: Dados[] = [];
     let i: number;
     i = 0;
@@ -48,6 +44,6 @@ export class SamuService {
         i++;
       }
     }
-    return valores;
+    return Promise.resolve(valores);
   }
 }

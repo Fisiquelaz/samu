@@ -15,16 +15,13 @@ import {UFs} from './services/mock-ufs'
   providers: [UFService, SamuService]
 })
 export class AppComponent implements OnInit {
-    ufs : UF[];
-    dados_da_samu : Dados[];
     id = 15
     uf: UF;
-    media: number;
-    samu: Dados[];
 
     constructor(private ufService: UFService, private samuService: SamuService)
     { }
 
     ngOnInit(): void {
+        this.ufService.getUF(this.id).then(uf => this.uf = uf);
     }
 }

@@ -15,6 +15,6 @@ export class todos_dadosComponent implements OnInit {
     { }
 
     ngOnInit(): void {
-        this.dados = this.modeloNovoService.mesclardados();
+        this.modeloNovoService.mesclardados().then(dados => this.dados = dados);
     }
 }

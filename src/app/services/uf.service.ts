@@ -5,10 +5,10 @@ import { UFs } from './mock-ufs';
 
 @Injectable()
 export class UFService {
-  getAll(): UF[] {
-    return UFs;
+  getAll(): Promise<UF[]> {
+    return Promise.resolve(UFs);
   }
-  getUF(id:number): UF{
+  getUF(id:number): Promise<UF>{
     let uf:UF;
     for(let entrada of UFs)
     {
@@ -17,6 +17,6 @@ export class UFService {
         break;
       }
     }
-    return uf;
+    return Promise.resolve(uf);
   }
 }
