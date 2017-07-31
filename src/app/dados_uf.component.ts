@@ -6,7 +6,7 @@ import {UFService} from './services/uf.service'
 import {Dados} from './types/samu';
 import {SamuService} from './services/samu.service'
 
-import {UFs} from './services/mock-ufs'
+//import {UFs} from './services/mock-ufs'
 
 @Component({
   selector: 'app-root',

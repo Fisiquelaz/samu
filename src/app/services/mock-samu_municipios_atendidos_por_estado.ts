@@ -1,4 +1,4 @@
-export const VALORES = [
+/*export const VALORES = [
     {valor:294,uf_id:42,ano:2013},
     {valor:75,uf_id:28,ano:2013},
     {valor:16,uf_id:17,ano:2013},
@@ -241,4 +241,4 @@ export const VALORES = [
     {valor:269,uf_id:41,ano:2014},
     {valor:44,uf_id:33,ano:2014},
     {valor:25,uf_id:24,ano:2014},
-]
+]*/
