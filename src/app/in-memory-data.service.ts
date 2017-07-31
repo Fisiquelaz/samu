@@ -276,6 +276,6 @@ export class InMemoryDataService implements InMemoryDbService {
         {valor:25,uf_id:24,ano:2014},
         {valor:293,uf_id:42,ano:2014}
     ];
-    return {VALORES};
+    return {ufs, VALORES};
   }
 }
